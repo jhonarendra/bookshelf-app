@@ -102,7 +102,7 @@ const main = () => {
 			localStorage.setItem('buku', JSON.stringify(data.buku))
 			method.loadBuku()
 			
-			let namaRak = (pindah.isComplete) ? 'Sudah Dibaca' : 'Belum Dibaca'
+			let namaRak = (pindah.isComplete) ? 'Sudah Dibaca' : 'Belum Selesai Dibaca'
 			method.alert('success', `Berhasil memindah buku "${pindah.title}" ke rak ${namaRak}`)
 		},
 		alert: (mode, msg) => {
@@ -151,7 +151,7 @@ const main = () => {
 							<p>Tahun: ${e.year}</p>
 							<p class="action">
 								<small>
-									<a href="javascript:void(0)" class="btn-pindah-rak" data-id="${e.id}">Tandai ${(e.isComplete) ? 'Belum' : 'Sudah'} Dibaca</a> | <a href="javascript:void(0)" class="btn-edit" data-id="${e.id}">Edit</a> | <a href="javascript:void(0)" class="btn-hapus" data-id="${e.id}">Hapus</a>
+									<a href="javascript:void(0)" class="btn-pindah-rak" data-id="${e.id}">Tandai ${(e.isComplete) ? 'Belum Selesai' : 'Sudah'} Dibaca</a> | <a href="javascript:void(0)" class="btn-edit" data-id="${e.id}">Edit</a> | <a href="javascript:void(0)" class="btn-hapus" data-id="${e.id}">Hapus</a>
 								</small>
 							</p>
 						</article>
@@ -195,7 +195,7 @@ const main = () => {
 			if(val === 'sudah-dibaca'){
 				elRakTitle.innerHTML = 'Sudah Dibaca'
 			} else {
-				elRakTitle.innerHTML = 'Belum Dibaca'
+				elRakTitle.innerHTML = 'Belum Selesai Dibaca'
 			}
 			
 			method.loadBuku()
